@@ -32,5 +32,4 @@ bot.on('ready', () => {
     console.log("▬▬▬▬▬▬▬▬▬▬\n Bot connecté à Discord \n▬▬▬▬▬▬▬▬▬▬")
     bot.user.setActivity("n!help | Bot privé | Créé par Panda.exe")
 })
-
-bot.login("NDYxNDkxODc5Mzk4MzQyNjU2.DnWX1g.jafkjh7IDW4Y5PivsXvsn6Yhr_4")
+bot.login(process.env.TOKEN)
