@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
-const prefix = "n!"
+const prefix = "/"
 
 bot.on("message", async message => {
 
