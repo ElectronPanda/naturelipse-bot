@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, args, tools) => {
     .setFooter('React to vote on Poll!')
     .setColor('#7289DA')
     const pollTitle = await message.channel.send({ embed });
-      await pollTitle.react(`ðŸ‘`);
-      await pollTitle.react(`ðŸ‘Ž`);
+      await pollTitle.react(`👍`);
+      await pollTitle.react(`👎`);
   
     const filter = (reaction) => reaction.emoji.name === '👍';
     const collector = pollTitle.createReactionCollector(filter, { time: 15000 });
