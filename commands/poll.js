@@ -14,12 +14,12 @@ module.exports.run = async (bot, message, args, tools) => {
       await pollTitle.react(`👎`);
   
     const filter = (reaction) => reaction.emoji.name === '👍';
-    const collector = pollTitle.createReactionCollector(filter, { time: 15000 });
+    const collector = pollTitle.createReactionCollector(filter, { time: 86400 });
       collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
       collector.on('end', collected => console.log(`Collected ${collected.size} items`));
   
     const filter1 = (reaction) => reaction.emoji.name === '👎';
-    const collector1 = pollTitle.createReactionCollector(filter1, { time: 15000 });
+    const collector1 = pollTitle.createReactionCollector(filter1, { time: 86400 });
       collector1.on('collect', r => console.log(`Collected ${r.emoji.name}`));
       collector1.on('end', collected => console.log(`Collected ${collected.size} items`));
 };
