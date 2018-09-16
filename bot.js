@@ -30,6 +30,6 @@ bot.on("message", async message => {
 
 bot.on('ready', () => {
     console.log("▬▬▬▬▬▬▬▬▬▬\n Bot connecté à Discord \n▬▬▬▬▬▬▬▬▬▬")
-    bot.user.setActivity("n!help | Bot privé | Créé par Panda.exe")
+    bot.user.setActivity(" "+prefix+"help | Bot privé | Créé par Panda.exe")
 })
 bot.login(process.env.TOKEN)
