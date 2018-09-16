@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(!message.member.hasPermission("KICK_MEMBERS")) return errors.noPerms(message, "KICK_MEMBERS");
     if(args[0] == "help"){
-      message.reply("Utilisation: !kick <@utilisateur> <raison>");
+      message.reply("Utilisation: /kick <@utilisateur> <raison>");
       return;
     }
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -21,9 +21,15 @@ module.exports.run = async (bot, message, args) => {
     .addField("Date", message.createdAt)
     .addField("Raison", kReason);
 
-    let kickChannel = message.guild.channels.find(`name`, "logs");
+    let kickChannel = message.guild.channels.find(`id`, "460888246294151188");
     if(!kickChannel) return message.channel.send("Merci de créé un salon nommé ``logs`` pour pouvoir kick quelqu'un.");
-
+    
+    let kickmsg = new Discord.RichEmbed()
+    .setDescription("Utilisateur kick avec succès !")
+    .addField(`${kUser} à été expulsé du serveur`, `Raison ${kReason}`)
+    
+    message.channel.send(kickmsg)
+    
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
 }
