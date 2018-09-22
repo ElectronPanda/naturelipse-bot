@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args, tools) => {
     const filter1 = (reaction) => reaction.emoji.name === '👎';
     const collector1 = pollTitle.createReactionCollector(filter1, { time: 5000 });
       collector1.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-      collector1.on('end', collected => message.channel.send(`J'ai collecté **${collected.size}** contre `)`));
+      collector1.on('end', collected => message.channel.send(`J'ai collecté **${collected.size}** contre `));
 };
 
 module.exports.help = {
